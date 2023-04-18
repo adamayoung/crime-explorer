@@ -5,6 +5,7 @@
 //  Created by Adam Young on 18/04/2023.
 //
 
+@testable import CrimeExplorer
 import XCTest
 
 final class CrimeExplorerTests: XCTestCase {
