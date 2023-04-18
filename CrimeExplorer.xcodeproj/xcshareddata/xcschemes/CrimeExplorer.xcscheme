@@ -32,9 +32,6 @@
             reference = "container:CrimeExplorer.xctestplan"
             default = "YES">
          </TestPlanReference>
-         <TestPlanReference
-            reference = "container:CrimeExplorerUI.xctestplan">
-         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference

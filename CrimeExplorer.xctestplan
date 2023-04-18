@@ -24,6 +24,14 @@
         "identifier" : "669F43C729EF3F670017928E",
         "name" : "CrimeExplorerTests"
       }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CrimeExplorer.xcodeproj",
+        "identifier" : "669F43D129EF3F670017928E",
+        "name" : "CrimeExplorerUITests"
+      }
     }
   ],
   "version" : 1
