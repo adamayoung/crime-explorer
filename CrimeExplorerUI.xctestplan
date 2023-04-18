@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "5C8C159C-EE07-4328-9B03-080ABBAFA457",
+      "id" : "684B905C-AFF9-4851-AC7F-F147C440F40E",
       "name" : "Configuration 1",
       "options" : {
 
@@ -9,11 +9,8 @@
     }
   ],
   "defaultOptions" : {
-    "targetForVariableExpansion" : {
-      "containerPath" : "container:CrimeExplorer.xcodeproj",
-      "identifier" : "669F43B629EF3F660017928E",
-      "name" : "CrimeExplorer"
-    },
+    "language" : "en-GB",
+    "region" : "GB",
     "testExecutionOrdering" : "random"
   },
   "testTargets" : [
@@ -21,8 +18,8 @@
       "parallelizable" : true,
       "target" : {
         "containerPath" : "container:CrimeExplorer.xcodeproj",
-        "identifier" : "669F43C729EF3F670017928E",
-        "name" : "CrimeExplorerTests"
+        "identifier" : "669F43D129EF3F670017928E",
+        "name" : "CrimeExplorerUITests"
       }
     }
   ],
