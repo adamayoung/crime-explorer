@@ -2,9 +2,12 @@
   "configurations" : [
     {
       "id" : "5C8C159C-EE07-4328-9B03-080ABBAFA457",
-      "name" : "Configuration 1",
+      "name" : "London",
       "options" : {
-
+        "locationScenario" : {
+          "identifier" : "London, England",
+          "referenceType" : "built-in"
+        }
       }
     }
   ],
@@ -25,6 +28,14 @@
         "containerPath" : "container:CrimeExplorer.xcodeproj",
         "identifier" : "669F43C729EF3F670017928E",
         "name" : "CrimeExplorerTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CrimeExplorerKit",
+        "identifier" : "CrimeExplorerKitTests",
+        "name" : "CrimeExplorerKitTests"
       }
     }
   ],

@@ -7,9 +7,13 @@ opt_in_rules:
   - operator_usage_whitespace
   - sorted_imports
 
+excluded:
+  - CrimeExplorerKit/.build
+  - CrimeExplorerKit/.swiftpm
+
 identifier_name:
   excluded:
-
+    - uk
 
 line_length:
   ignores_urls: true
