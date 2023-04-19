@@ -42,6 +42,41 @@ public class CrimeExplorerModel: ObservableObject {
                 self.currentLocation = location
             }
             .store(in: &cancellables)
+
+        $currentLocation
+            .compactMap { $0 }
+            .first()
+            .map { location in
+                MKCoordinateRegion(
+                    center: location.coordinate,
+                    span: MKCoordinateSpan(
+                        latitudeDelta: 0.01,
+                        longitudeDelta: 0.01
+                    )
+                )
+            }
+            .sink { [weak self] region in
+                guard let self else {
+                    return
+                }
+
+                self.region = region
+            }
+            .store(in: &cancellables)
+    }
+
+    func moveRegionToCurrentLocation() {
+        guard let currentLocation else {
+            return
+        }
+
+        region = MKCoordinateRegion(
+            center: currentLocation.coordinate,
+            span: MKCoordinateSpan(
+                latitudeDelta: 0.01,
+                longitudeDelta: 0.01
+            )
+        )
     }
 
 }

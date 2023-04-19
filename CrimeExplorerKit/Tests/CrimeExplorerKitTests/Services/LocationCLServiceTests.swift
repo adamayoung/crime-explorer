@@ -35,8 +35,32 @@ final class LocationCLServiceTests: XCTestCase {
         XCTAssertNotNil(locationManager.delegate)
     }
 
+    func testRequestWhenInUseAuthorizationIsCalled() {
+        XCTAssertTrue(locationManager.didRequestWhenInUseAuthorisation)
+    }
+
     func testLocationIsInitialNil() {
         XCTAssertNil(locationService.location.value)
+    }
+
+    func testStartUpdatingLocationWhenAuthorizationIsChangedToAuthorizedAlwaysShouldStartUpdatingLocation() {
+        locationService.locationManager(CLLocationManager(), didChangeAuthorization: .authorizedAlways)
+
+        XCTAssertTrue(locationManager.didStartUpdatingLocation)
+    }
+
+    #if os(iOS)
+    func testStartUpdatingLocationWhenAuthorizationIsChangedToAuthorizedWhenInUseShouldStartUpdatingLocation() {
+        locationService.locationManager(CLLocationManager(), didChangeAuthorization: .authorizedWhenInUse)
+
+        XCTAssertTrue(locationManager.didStartUpdatingLocation)
+    }
+    #endif
+
+    func testStartUpdatingLocationWhenAuthorizationIsChangedToDeniedShouldNotStartUpdatingLocation() {
+        locationService.locationManager(CLLocationManager(), didChangeAuthorization: .denied)
+
+        XCTAssertFalse(locationManager.didStartUpdatingLocation)
     }
 
     func testLocationWhenReceivedLocationsUpdateLocation() {

@@ -13,7 +13,7 @@ struct ContentView: View {
     @ObservedObject var model: CrimeExplorerModel
 
     var body: some View {
-        CrimeMapView(model: model)
+        CrimeMapView(region: $model.region)
     }
 
 }

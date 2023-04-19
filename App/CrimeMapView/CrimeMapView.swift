@@ -11,9 +11,7 @@ import SwiftUI
 
 struct CrimeMapView: View {
 
-    @ObservedObject var model: CrimeExplorerModel
-
-    @State private var region: MKCoordinateRegion = .uk
+    @Binding var region: MKCoordinateRegion
     @State private var userTrackingMode: MapUserTrackingMode = .follow
     @State private var hasSetUserLocation = false
 
@@ -26,28 +24,7 @@ struct CrimeMapView: View {
                 userTrackingMode: $userTrackingMode
             )
         }
-        .onChange(of: model.currentLocation) { location in
-            guard !hasSetUserLocation, let location else {
-                return
-            }
-
-            hasSetUserLocation = true
-            centerMap(to: location)
-        }
-        .onChange(of: region) { region in
-            model.region = region
-        }
         .ignoresSafeArea()
-    }
-
-    private func centerMap(to location: CLLocation) {
-        region = MKCoordinateRegion(
-            center: location.coordinate,
-            span: MKCoordinateSpan(
-                latitudeDelta: 0.01,
-                longitudeDelta: 0.01
-            )
-        )
     }
 
 }
@@ -59,7 +36,7 @@ struct CrimeMapView_Previews: PreviewProvider {
         @StateObject private var model = CrimeExplorerModel(dependencies: .preview)
 
         var body: some View {
-            CrimeMapView(model: model)
+            CrimeMapView(region: $model.region)
         }
 
     }
