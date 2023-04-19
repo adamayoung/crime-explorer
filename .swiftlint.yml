@@ -9,7 +9,7 @@ opt_in_rules:
 
 identifier_name:
   excluded:
-
+    - uk
 
 line_length:
   ignores_urls: true
