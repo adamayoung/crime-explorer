@@ -5,18 +5,15 @@
 //  Created by Adam Young on 18/04/2023.
 //
 
+import CrimeExplorerKit
 import SwiftUI
 
 struct ContentView: View {
 
+    @ObservedObject var model: CrimeExplorerModel
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        MapView(model: model)
     }
 
 }
@@ -24,7 +21,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
 
     static var previews: some View {
-        ContentView()
+        ContentView(model: CrimeExplorerModel(dependencies: .preview))
     }
 
 }
