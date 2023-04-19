@@ -13,7 +13,7 @@ struct CrimeMapView: View {
 
     @ObservedObject var model: CrimeExplorerModel
 
-    @State private var region = MKCoordinateRegion.uk
+    @State private var region: MKCoordinateRegion = .uk
     @State private var userTrackingMode: MapUserTrackingMode = .follow
     @State private var hasSetUserLocation = false
 

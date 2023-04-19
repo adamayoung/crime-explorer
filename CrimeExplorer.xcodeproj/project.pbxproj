@@ -179,6 +179,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 669F43DC29EF3F670017928E /* Build configuration list for PBXNativeTarget "CrimeExplorer" */;
 			buildPhases = (
+				6646B44629F07BE400EAFED9 /* ShellScript */,
 				669F43B329EF3F660017928E /* Sources */,
 				669F43B429EF3F660017928E /* Frameworks */,
 				669F43B529EF3F660017928E /* Resources */,
@@ -301,6 +302,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6646B44629F07BE400EAFED9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -n \"$CI\" ]\nthen\n    exit 0\nfi\n\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		669F43B329EF3F660017928E /* Sources */ = {
