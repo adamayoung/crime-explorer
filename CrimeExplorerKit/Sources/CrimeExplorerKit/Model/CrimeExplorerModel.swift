@@ -14,7 +14,9 @@ import SwiftUI
 public class CrimeExplorerModel: ObservableObject {
 
     public struct Dependencies {
-        var location: CurrentValueSubject<CLLocation?, Never>
+        let location: CurrentValueSubject<CLLocation?, Never>
+        let startUpdatingLocation: () -> Void
+        let stopUpdatingLocation: () -> Void
     }
 
     @Published public var region: MKCoordinateRegion
@@ -33,6 +35,8 @@ public class CrimeExplorerModel: ObservableObject {
         self.region = initialRegion
         self.dependencies = dependencies
 
+        self.dependencies.startUpdatingLocation()
+
         dependencies.location
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
@@ -40,6 +44,10 @@ public class CrimeExplorerModel: ObservableObject {
                 self?.currentLocation = location
             }
             .store(in: &cancellables)
+    }
+
+    deinit {
+        dependencies.stopUpdatingLocation()
     }
 
 }

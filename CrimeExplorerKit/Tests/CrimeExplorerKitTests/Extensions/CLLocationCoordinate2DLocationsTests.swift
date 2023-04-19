@@ -1,5 +1,5 @@
-@testable import CrimeExplorerKit
 import CoreLocation
+@testable import CrimeExplorerKit
 import XCTest
 
 final class CLLocationCoordinate2DLocationsTests: XCTestCase {

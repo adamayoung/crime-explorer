@@ -1,5 +1,5 @@
 //
-//  MapView.swift
+//  CrimeMapView.swift
 //  CrimeExplorer
 //
 //  Created by Adam Young on 19/04/2023.
@@ -9,7 +9,7 @@ import CrimeExplorerKit
 import MapKit
 import SwiftUI
 
-struct MapView: View {
+struct CrimeMapView: View {
 
     @ObservedObject var model: CrimeExplorerModel
 
@@ -50,14 +50,14 @@ struct MapView: View {
 
 }
 
-struct MapView_Previews: PreviewProvider {
+struct CrimeMapView_Previews: PreviewProvider {
 
     struct Preview: View {
 
         @StateObject private var model = CrimeExplorerModel(dependencies: .preview)
 
         var body: some View {
-            MapView(model: model)
+            CrimeMapView(model: model)
         }
 
     }

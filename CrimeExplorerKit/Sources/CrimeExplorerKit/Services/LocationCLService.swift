@@ -15,17 +15,20 @@ public final class LocationCLService: NSObject, LocationService {
 
     private let locationManager: CLLocationManaging
 
-    public init(locationManager: CLLocationManaging = CLLocationManager()) {
+    public init(locationManager: CLLocationManaging) {
         self.locationManager = locationManager
         super.init()
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.distanceFilter = kCLDistanceFilterNone
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
         self.locationManager.delegate = self
     }
 
-    deinit {
+    public func startUpdating() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+
+    public func stopUpdating() {
         locationManager.stopUpdatingLocation()
     }
 

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		661B8FF529EFFBD1002BAED5 /* CrimeExplorerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 661B8FF429EFFBD1002BAED5 /* CrimeExplorerKit */; };
-		6664924A29EF5A9600CBB1C2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6664924929EF5A9600CBB1C2 /* MapView.swift */; };
+		6664924A29EF5A9600CBB1C2 /* CrimeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6664924929EF5A9600CBB1C2 /* CrimeMapView.swift */; };
 		666C49F429EF53FD006DBA7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 666C49F629EF53FD006DBA7F /* Localizable.strings */; };
 		666C49F729EF5400006DBA7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 666C49F929EF5400006DBA7F /* InfoPlist.strings */; };
 		669F43BB29EF3F660017928E /* CrimeExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669F43BA29EF3F660017928E /* CrimeExplorerApp.swift */; };
@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		661B8FF229EFFA97002BAED5 /* CrimeExplorerKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CrimeExplorerKit; sourceTree = "<group>"; };
-		6664924929EF5A9600CBB1C2 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		6664924929EF5A9600CBB1C2 /* CrimeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeMapView.swift; sourceTree = "<group>"; };
 		6664924D29EF5C4D00CBB1C2 /* CrimeExplorer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrimeExplorer-Info.plist"; sourceTree = "<group>"; };
 		666C49EE29EF5069006DBA7F /* CrimeExplorerUI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CrimeExplorerUI.xctestplan; sourceTree = "<group>"; };
 		666C49F529EF53FD006DBA7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -91,12 +91,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6664924829EF5A8700CBB1C2 /* Map */ = {
+		6664924829EF5A8700CBB1C2 /* CrimeMapView */ = {
 			isa = PBXGroup;
 			children = (
-				6664924929EF5A9600CBB1C2 /* MapView.swift */,
+				6664924929EF5A9600CBB1C2 /* CrimeMapView.swift */,
 			);
-			path = Map;
+			path = CrimeMapView;
 			sourceTree = "<group>";
 		};
 		666C49FA29EF5755006DBA7F /* Navigation */ = {
@@ -140,7 +140,7 @@
 				669F43C029EF3F660017928E /* CrimeExplorer.entitlements */,
 				666C49F629EF53FD006DBA7F /* Localizable.strings */,
 				666C49F929EF5400006DBA7F /* InfoPlist.strings */,
-				6664924829EF5A8700CBB1C2 /* Map */,
+				6664924829EF5A8700CBB1C2 /* CrimeMapView */,
 				666C49FA29EF5755006DBA7F /* Navigation */,
 				669F43C129EF3F660017928E /* Preview Content */,
 			);
@@ -308,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				669F43BD29EF3F660017928E /* ContentView.swift in Sources */,
-				6664924A29EF5A9600CBB1C2 /* MapView.swift in Sources */,
+				6664924A29EF5A9600CBB1C2 /* CrimeMapView.swift in Sources */,
 				669F43BB29EF3F660017928E /* CrimeExplorerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

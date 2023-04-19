@@ -13,4 +13,8 @@ public protocol LocationService: AnyObject {
 
     var location: CurrentValueSubject<CLLocation?, Never> { get }
 
+    func startUpdating()
+
+    func stopUpdating()
+
 }
