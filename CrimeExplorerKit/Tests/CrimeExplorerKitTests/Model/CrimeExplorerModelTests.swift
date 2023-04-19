@@ -2,7 +2,6 @@ import Combine
 import CoreLocation
 @testable import CrimeExplorerKit
 import MapKit
-import SwiftUI
 import XCTest
 
 @MainActor
@@ -22,21 +21,7 @@ final class CrimeExplorerModelTests: XCTestCase {
 
         model = CrimeExplorerModel(
             dependencies: .init(
-                location: location,
-                startUpdatingLocation: { [weak self] in
-                    guard let self else {
-                        return
-                    }
-
-                    isUpdatingLocation = true
-                },
-                stopUpdatingLocation: { [weak self] in
-                    guard let self else {
-                        return
-                    }
-
-                    isUpdatingLocation = false
-                }
+                location: location
             )
         )
     }
@@ -50,16 +35,9 @@ final class CrimeExplorerModelTests: XCTestCase {
     }
 
     func testInitSetInitialRegion() {
-        let expectedRegion = MKCoordinateRegion(
-            center: .london,
-            span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-        )
+        let expectedRegion = MKCoordinateRegion.uk
 
         XCTAssertEqual(model.region, expectedRegion)
-    }
-
-    func testInitStartsUpdatingLocation() {
-        XCTAssertTrue(isUpdatingLocation)
     }
 
     func testCurrentLocationIsInitialNil() {

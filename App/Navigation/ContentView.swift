@@ -20,8 +20,18 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
 
+    struct Preview: View {
+
+        @StateObject private var model = CrimeExplorerModel(dependencies: .preview)
+
+        var body: some View {
+            ContentView(model: model)
+        }
+
+    }
+
     static var previews: some View {
-        ContentView(model: CrimeExplorerModel(dependencies: .preview))
+        Preview()
     }
 
 }

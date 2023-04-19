@@ -53,24 +53,6 @@ final class LocationCLServiceTests: XCTestCase {
         XCTAssertNil(locationService.location.value)
     }
 
-    func testStartUpdatingRequestsWhenInUseAuthorization() {
-        locationService.startUpdating()
-
-        XCTAssertTrue(locationManager.didRequestWhenInUseAuthorisation)
-    }
-
-    func testStartUpdatingStartsUpdatingLocation() {
-        locationService.startUpdating()
-
-        XCTAssertTrue(locationManager.didStartUpdatingLocation)
-    }
-
-    func testStopUpdatingStopsUpdatingLocation() {
-        locationService.stopUpdating()
-
-        XCTAssertTrue(locationManager.didStopUpdatingLocation)
-    }
-
 }
 
 extension LocationCLServiceTests {

@@ -13,10 +13,7 @@ struct CrimeMapView: View {
 
     @ObservedObject var model: CrimeExplorerModel
 
-    @State private var region = MKCoordinateRegion(
-        center: .london,
-        span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-    )
+    @State private var region = MKCoordinateRegion.uk
     @State private var userTrackingMode: MapUserTrackingMode = .follow
     @State private var hasSetUserLocation = false
 
@@ -44,8 +41,13 @@ struct CrimeMapView: View {
     }
 
     private func centerMap(to location: CLLocation) {
-        region.center = location.coordinate
-        region.span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        region = MKCoordinateRegion(
+            center: location.coordinate,
+            span: MKCoordinateSpan(
+                latitudeDelta: 0.01,
+                longitudeDelta: 0.01
+            )
+        )
     }
 
 }

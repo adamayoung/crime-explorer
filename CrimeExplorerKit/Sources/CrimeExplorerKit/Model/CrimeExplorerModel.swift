@@ -15,8 +15,6 @@ public class CrimeExplorerModel: ObservableObject {
 
     public struct Dependencies {
         let location: CurrentValueSubject<CLLocation?, Never>
-        let startUpdatingLocation: () -> Void
-        let stopUpdatingLocation: () -> Void
     }
 
     @Published public var region: MKCoordinateRegion
@@ -26,28 +24,24 @@ public class CrimeExplorerModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     public init(
-        initialRegion: MKCoordinateRegion = MKCoordinateRegion(
-            center: .london,
-            span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-        ),
+        initialRegion: MKCoordinateRegion = .uk,
         dependencies: Dependencies
     ) {
         self.region = initialRegion
         self.dependencies = dependencies
 
-        self.dependencies.startUpdatingLocation()
-
         dependencies.location
+            .compactMap { $0 }
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] location in
-                self?.currentLocation = location
+                guard let self else {
+                    return
+                }
+
+                self.currentLocation = location
             }
             .store(in: &cancellables)
-    }
-
-    deinit {
-        dependencies.stopUpdatingLocation()
     }
 
 }

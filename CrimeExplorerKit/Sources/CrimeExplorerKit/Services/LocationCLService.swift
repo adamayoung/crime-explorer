@@ -23,18 +23,23 @@ public final class LocationCLService: NSObject, LocationService {
         self.locationManager.delegate = self
     }
 
-    public func startUpdating() {
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-
-    public func stopUpdating() {
+    deinit {
         locationManager.stopUpdatingLocation()
     }
 
 }
 
 extension LocationCLService: CLLocationManagerDelegate {
+
+    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+
+        default:
+            break
+        }
+    }
 
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {
