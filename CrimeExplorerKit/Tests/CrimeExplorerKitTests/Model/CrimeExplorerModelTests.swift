@@ -21,7 +21,8 @@ final class CrimeExplorerModelTests: XCTestCase {
 
         model = CrimeExplorerModel(
             dependencies: .init(
-                location: location
+                location: location,
+                neighbourhood: { _ in nil }
             )
         )
     }

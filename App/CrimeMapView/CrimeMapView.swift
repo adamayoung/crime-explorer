@@ -24,7 +24,6 @@ struct CrimeMapView: View {
                 userTrackingMode: $userTrackingMode
             )
         }
-        .ignoresSafeArea()
     }
 
 }
