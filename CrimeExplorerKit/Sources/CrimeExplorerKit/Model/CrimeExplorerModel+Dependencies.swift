@@ -6,7 +6,7 @@ extension CrimeExplorerModel.Dependencies {
     public static var live: Self {
         return .init(
             location: ModuleDependencies.locationService.location,
-            neighbourhood: ModuleDependencies.neighbourhoodManager.neighbourhood(at:)
+            neighbourhood: ModuleDependencies.fetchNeighbourhoodUseCase.execute(at:)
         )
     }
 

@@ -73,7 +73,7 @@ public class CrimeExplorerModel: ObservableObject {
             .throttle(for: .seconds(2), scheduler: backgroundScheduler, latest: true)
             .removeDuplicates()
             .sink { [weak self] region in
-                self?.updateNeighbourhood(in: region)
+                self?.updateToNeighbourhood(in: region)
             }
             .store(in: &cancellables)
     }
@@ -96,7 +96,7 @@ public class CrimeExplorerModel: ObservableObject {
 
 extension CrimeExplorerModel {
 
-    private func updateNeighbourhood(in region: MKCoordinateRegion) {
+    private func updateToNeighbourhood(in region: MKCoordinateRegion) {
         Task {
             let coordinate = Coordinate(region: region)
             let neighbourhood = try? await dependencies.neighbourhood(coordinate)

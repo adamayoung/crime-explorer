@@ -4,8 +4,8 @@ import PoliceAPI
 
 struct ModuleDependencies {
 
-    static var neighbourhoodManager: NeighbourhoodManager {
-        NeighbourhoodPoliceAPIManager(neighbourhoodService: policeAPI.neighbourhoods)
+    static var fetchNeighbourhoodUseCase: FetchNeighbourhoodUseCase {
+        FetchNeighbourhood(neighbourhoodService: policeAPI.neighbourhoods)
     }
 
     static let locationService: LocationService = LocationCLService(locationManager: CLLocationManager())

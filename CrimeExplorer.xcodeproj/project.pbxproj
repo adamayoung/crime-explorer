@@ -58,6 +58,7 @@
 		669F43D229EF3F670017928E /* CrimeExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrimeExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		669F43D629EF3F670017928E /* CrimeExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeExplorerUITests.swift; sourceTree = "<group>"; };
 		669F43D829EF3F670017928E /* CrimeExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		66A65F3C29F1C5CB00CDA10D /* CrimeExplorerKit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CrimeExplorerKit.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +120,7 @@
 				669F43D529EF3F670017928E /* CrimeExplorerUITests */,
 				66784A4C29EF444300DBA135 /* CrimeExplorer.xctestplan */,
 				666C49EE29EF5069006DBA7F /* CrimeExplorerUI.xctestplan */,
+				66A65F3C29F1C5CB00CDA10D /* CrimeExplorerKit.xctestplan */,
 				669F43B829EF3F660017928E /* Products */,
 				661B8FF329EFFBD1002BAED5 /* Frameworks */,
 			);

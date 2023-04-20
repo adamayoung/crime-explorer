@@ -4,6 +4,10 @@ import XCTest
 
 final class MKCoordinateRegionLocationsTests: XCTestCase {
 
+    func testDefaul() {
+        XCTAssertEqual(MKCoordinateRegion.default, MKCoordinateRegion.uk)
+    }
+
     func testUK() {
         let region = MKCoordinateRegion.uk
 

@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "1F5FA2AB-37EC-461D-A275-6597F50CE21C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:",
+          "identifier" : "CrimeExplorerKit",
+          "name" : "CrimeExplorerKit"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "CrimeExplorerKitTests",
+        "name" : "CrimeExplorerKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

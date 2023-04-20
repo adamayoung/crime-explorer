@@ -12,6 +12,20 @@
     }
   ],
   "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:CrimeExplorer.xcodeproj",
+          "identifier" : "669F43B629EF3F660017928E",
+          "name" : "CrimeExplorer"
+        },
+        {
+          "containerPath" : "container:CrimeExplorerKit",
+          "identifier" : "CrimeExplorerKit",
+          "name" : "CrimeExplorerKit"
+        }
+      ]
+    },
     "language" : "en-GB",
     "region" : "GB",
     "targetForVariableExpansion" : {

@@ -1,7 +1,7 @@
 import Foundation
 import PoliceAPI
 
-final class NeighbourhoodPoliceAPIManager: NeighbourhoodManager {
+final class FetchNeighbourhood: FetchNeighbourhoodUseCase {
 
     private let neighbourhoodService: NeighbourhoodService
 
@@ -9,7 +9,7 @@ final class NeighbourhoodPoliceAPIManager: NeighbourhoodManager {
         self.neighbourhoodService = neighbourhoodService
     }
 
-    func neighbourhood(at coordinate: Coordinate) async throws -> Neighbourhood? {
+    func execute(at coordinate: Coordinate) async throws -> Neighbourhood? {
         let neighbourhoodPolicingTeam = try await neighbourhoodPolicingTeam(at: coordinate)
 
         let neighbourhoodDataModel = try await neighbourhoodService.neighbourhood(
@@ -22,7 +22,11 @@ final class NeighbourhoodPoliceAPIManager: NeighbourhoodManager {
         return neighbourhood
     }
 
-    func neighbourhoodPolicingTeam(at coordinate: Coordinate) async throws -> NeighbourhoodPolicingTeam {
+}
+
+extension FetchNeighbourhood {
+
+    private func neighbourhoodPolicingTeam(at coordinate: Coordinate) async throws -> NeighbourhoodPolicingTeam {
         let coordinate = PoliceAPI.Coordinate(coordinate: coordinate)
         let neighbourhoodPolicingTeamDataModel = try await neighbourhoodService.neighbourhoodPolicingTeam(
             atCoordinate: coordinate
